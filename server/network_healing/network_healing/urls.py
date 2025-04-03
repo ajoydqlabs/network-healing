@@ -14,10 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from healing.views import home
+from django.urls import path, include
+from healing.views import get_items, create_item
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home),  # Root URL
+    path('', include('healing.urls')),  # Make sure your app URLs are included
 ]
