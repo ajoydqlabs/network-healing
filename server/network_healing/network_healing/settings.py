@@ -76,8 +76,16 @@ WSGI_APPLICATION = 'network_healing.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dqlabs',
+        'USER': 'postgres',
+        'PASSWORD': 'Intel1234',
+        'HOST': '54.164.228.92',  # Set to your database host
+        'PORT': '5432',       # Default PostgreSQL port
+        # 'schema': 'hackathon',
+        'OPTIONS': {
+            'options': '-c search_path=hackathon'
+        }
     }
 }
 
